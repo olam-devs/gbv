@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #71717a;
+  --card: #ffffff;
+  --border: rgba(24, 24, 27, 0.10);
+
+  /* Brand palette */
+  --primary: #dc2626; /* red: HIV awareness / key CTAs */
+  --primary-2: #b91c1c;
+  --brand-blue: #3867d6; /* PASADA blue (from existing site) */
+  --brand-blue-2: #1f4fbf;
+  --accent: #22c55e; /* supportive green accent */
+  --warning: #f59e0b; /* amber-500 */
+  --ring: rgba(220, 38, 38, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* smooth anchored section scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* subtle page background grid */
+.bg-grid {
+  background-image: radial-gradient(
+    rgba(2, 132, 199, 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  background-position: -7px -7px;
+}
+
+/* focus rings */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 4px var(--ring);
+  border-radius: 10px;
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, ::before, ::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
