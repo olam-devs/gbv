@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, HandHeart, Users, Stethoscope, Sparkles } from "lucide-react";
+import { ArrowRight, HandHeart, Users, Shield, Sparkles } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Container } from "@/components/ui/Container";
@@ -29,69 +29,73 @@ export default async function Home() {
     <div className="flex min-h-full flex-col">
       <Header />
 
-      <section className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-grid opacity-60" aria-hidden="true" />
+      <section className="relative overflow-hidden bg-[var(--primary)]">
+        <div className="absolute inset-0 bg-grid opacity-20" aria-hidden="true" />
         <div
-          className="absolute -top-24 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-red-100/60 via-sky-200/45 to-teal-200/60 blur-3xl"
+          className="absolute -top-24 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-800/60 via-violet-600/40 to-purple-900/60 blur-3xl"
           aria-hidden="true"
         />
         <Container className="relative flex min-h-[calc(100vh-4rem)] items-center py-16 sm:py-20">
           <div className="grid w-full items-center gap-10 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-xs font-medium text-blue-900 ring-1 ring-blue-200">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-medium text-white ring-1 ring-white/25">
                   <Sparkles className="h-4 w-4" aria-hidden="true" />
-                  Faith-led care for community wellbeing in Tanzania
+                  Registered NGO — Tanzania, Reg. No. ooNGO/R/5824
                 </div>
 
-                <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-                  Embracing support, building hope for people affected by HIV &amp;
-                  AIDS
+                <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                  Standing with survivors of gender-based and intimate partner violence
                 </h1>
-                <p className="mt-4 max-w-xl text-pretty text-base leading-7 text-zinc-700 sm:text-lg">
-                  PASADA (T) provides quality, caring, compassionate services and
-                  support—prioritizing the poorest and most vulnerable through a
-                  holistic approach rooted in dignity and respect.
+                <p className="mt-4 max-w-xl text-pretty text-base leading-7 text-violet-100 sm:text-lg">
+                  GI-Desk is a nonpartisan, nonreligious charitable non-profit
+                  providing case management, psychosocial support, and community
+                  education for GBV survivors across Tanzania.{" "}
+                  <span className="font-semibold text-white">#StopGBVNow</span>
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <ButtonLink href="/donate" size="lg" className="justify-center">
-                    Donate to save lives <ArrowRight className="h-4 w-4" />
+                  <ButtonLink
+                    href="/donate"
+                    size="lg"
+                    className="justify-center bg-white text-[var(--primary)] hover:bg-violet-50"
+                  >
+                    Donate to end violence <ArrowRight className="h-4 w-4" />
                   </ButtonLink>
                   <ButtonLink
                     href="/get-involved"
                     variant="secondary"
                     size="lg"
-                    className="justify-center"
+                    className="justify-center bg-white/10 text-white ring-white/30 hover:bg-white/20"
                   >
-                    Volunteer with us
+                    Get involved
                   </ButtonLink>
                 </div>
 
-                <div className="mt-10 grid grid-cols-1 gap-4 rounded-2xl border-2 border-[var(--primary)] bg-white/80 p-4 backdrop-blur sm:grid-cols-3">
+                <div className="mt-10 grid grid-cols-1 gap-4 rounded-2xl border-2 border-white/25 bg-white/10 p-4 backdrop-blur sm:grid-cols-3">
                   {[
                     {
-                      icon: <Stethoscope className="h-4 w-4" aria-hidden="true" />,
-                      title: "Care & treatment",
-                      desc: "Client-centered services and follow-up support.",
+                      icon: <Shield className="h-4 w-4" aria-hidden="true" />,
+                      title: "Safety & support",
+                      desc: "Case management and psychosocial care for survivors.",
                     },
                     {
                       icon: <Users className="h-4 w-4" aria-hidden="true" />,
-                      title: "Community impact",
-                      desc: "Education, outreach and stigma reduction.",
+                      title: "Community action",
+                      desc: "Education, dialogues and norm change across communities.",
                     },
                     {
                       icon: <HandHeart className="h-4 w-4" aria-hidden="true" />,
-                      title: "Compassion",
-                      desc: "Holistic support rooted in dignity and respect.",
+                      title: "Empowerment",
+                      desc: "Leadership, confidence and economic support for women.",
                     },
                   ].map((c) => (
                     <div key={c.title} className="rounded-xl p-3">
-                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-900 ring-1 ring-blue-100">
+                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-white ring-1 ring-white/20">
                         {c.icon}
                       </div>
-                      <div className="mt-2 text-sm font-semibold">{c.title}</div>
-                      <div className="mt-1 text-xs leading-5 text-zinc-600">
+                      <div className="mt-2 text-sm font-semibold text-white">{c.title}</div>
+                      <div className="mt-1 text-xs leading-5 text-violet-200">
                         {c.desc}
                       </div>
                     </div>
@@ -102,11 +106,11 @@ export default async function Home() {
 
             <AnimatedSection delay={0.1}>
               <HeroSlideshow images={[...media.hero.home]} />
-              <div className="pointer-events-none relative z-10 -mt-2 hidden rounded-2xl border-2 border-black bg-white/95 p-4 text-sm shadow-lg sm:block sm:max-w-xs">
-                <div className="font-semibold text-black">Mission</div>
+              <div className="pointer-events-none relative z-10 -mt-2 hidden rounded-2xl border-2 border-white/30 bg-white/90 p-4 text-sm shadow-lg sm:block sm:max-w-xs">
+                <div className="font-semibold text-zinc-950">Our mission</div>
                 <div className="mt-1 text-zinc-800">
-                  Quality, caring, compassionate services for those infected and
-                  affected—especially the poorest and neediest.
+                  A nonpartisan, nonreligious non-profit supporting people experiencing
+                  gender-based and intimate partner violence in Tanzania.
                 </div>
               </div>
             </AnimatedSection>
@@ -114,19 +118,19 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="border-t border-[var(--border)] bg-white">
+      <section className="border-t border-white/15 bg-[var(--primary)]">
         <Container className="py-16">
           <AnimatedSection>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <div className="text-xs font-semibold tracking-wide text-[var(--brand-blue)]">
+                <div className="text-xs font-semibold tracking-wide text-violet-300">
                   What we do
                 </div>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight">
-                  Comprehensive support services
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">
+                  Comprehensive GBV response services
                 </h2>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-700">
-                  Featured services supporting community wellbeing, prevention and care.
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-violet-100">
+                  From direct survivor support to community prevention and advocacy.
                 </p>
               </div>
               <ButtonLink href="/services" variant="secondary">
@@ -152,16 +156,16 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="border-t border-[var(--border)] bg-zinc-50">
+      <section className="border-t border-[var(--border)] bg-white">
         <Container className="py-16">
           <AnimatedSection>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <div className="text-xs font-semibold tracking-wide text-[var(--brand-blue)]">
+                <div className="text-xs font-semibold tracking-wide text-[var(--primary)]">
                   Impact in action
                 </div>
                 <h2 className="mt-2 text-3xl font-semibold tracking-tight">
-                  Projects that bring hope
+                  Projects changing lives
                 </h2>
               </div>
               <ButtonLink href="/projects" variant="secondary">
@@ -187,16 +191,16 @@ export default async function Home() {
       </section>
 
       {featuredPosts.length > 0 ? (
-        <section className="border-t border-[var(--border)] bg-white">
+        <section className="border-t border-white/15 bg-[var(--primary)]">
           <Container className="py-16">
             <AnimatedSection>
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
-                  <div className="text-xs font-semibold tracking-wide text-[var(--brand-blue)]">
+                  <div className="text-xs font-semibold tracking-wide text-violet-300">
                     Latest stories
                   </div>
-                  <h2 className="mt-2 text-3xl font-semibold tracking-tight">
-                    News &amp; community updates
+                  <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">
+                    News &amp; updates
                   </h2>
                 </div>
                 <ButtonLink href="/blog" variant="secondary">
@@ -222,27 +226,31 @@ export default async function Home() {
         </section>
       ) : null}
 
-      <section className="border-t border-[var(--border)] bg-white">
+      <section className="border-t border-white/15 bg-[var(--primary)]">
         <Container className="py-16">
-          <div className="relative overflow-hidden rounded-3xl border-2 border-[var(--primary)] bg-gradient-to-br from-red-50 via-white to-blue-50 p-8 sm:p-10">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-white/25 bg-white/10 p-8 backdrop-blur sm:p-10">
             <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
-                <h2 className="text-3xl font-semibold tracking-tight text-zinc-950">
-                  Help us bring smiles, hope and save lives
+                <h2 className="text-3xl font-semibold tracking-tight text-white">
+                  Help us end gender-based violence in Tanzania
                 </h2>
-                <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-800">
-                  Donors, partners and volunteers make our work possible.
+                <p className="mt-3 max-w-xl text-sm leading-6 text-violet-100">
+                  Donors, partners and volunteers make every survivor's journey to safety possible.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                <ButtonLink href="/donate" size="lg" className="justify-center">
+                <ButtonLink
+                  href="/donate"
+                  size="lg"
+                  className="justify-center bg-white text-[var(--primary)] hover:bg-violet-50"
+                >
                   Donate
                 </ButtonLink>
                 <ButtonLink
                   href="/contact"
                   variant="secondary"
                   size="lg"
-                  className="justify-center"
+                  className="justify-center bg-white/10 text-white ring-white/30 hover:bg-white/20"
                 >
                   Talk to us <ArrowRight className="h-4 w-4" />
                 </ButtonLink>
@@ -252,18 +260,18 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="border-t border-[var(--border)] bg-zinc-50">
+      <section className="border-t border-[var(--border)] bg-white">
         <Container className="py-16">
           <div className="grid items-start gap-8 lg:grid-cols-5">
             <div className="lg:col-span-2">
               <div className="text-xs font-semibold tracking-wide text-[var(--primary)]">
-                Community trust
+                Survivor voices
               </div>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950">
-                Stories that inspire hope
+                Stories of courage and change
               </h2>
               <p className="mt-3 text-sm leading-7 text-zinc-700">
-                Voices from clients, caregivers, volunteers and partners.
+                From survivors, community members, volunteers and partners.
               </p>
             </div>
             <div className="min-w-0 lg:col-span-3">
@@ -276,7 +284,7 @@ export default async function Home() {
               />
               <div className="mt-4 text-sm font-semibold text-[var(--primary)]">
                 <Link href="/testimonials" className="hover:underline">
-                  Read more testimonials →
+                  Read more stories →
                 </Link>
               </div>
             </div>

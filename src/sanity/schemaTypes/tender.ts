@@ -87,7 +87,7 @@ export const tender = defineType({
       name: "contactEmail",
       title: "Contact email for inquiries",
       type: "string",
-      initialValue: "info@pasada.or.tz",
+      initialValue: "genderdeskhelp@gmail.com",
     }),
   ],
   preview: {

@@ -13,7 +13,7 @@ export default async function BlogPage() {
   return (
     <PageShell
       eyebrow="Stories & updates"
-      title="Latest from PASADA"
+      title="Latest from GI-Desk"
       heroImageSrc={media.hero.blog}
     >
       <AnimatedSection>

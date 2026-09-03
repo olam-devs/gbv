@@ -56,19 +56,17 @@ export default async function BlogPostPage({
           content={post.content}
         >
           <p>
-            PASADA continues to serve people infected and affected by HIV and AIDS
-            through compassionate, holistic support—prioritizing the poorest and
-            most vulnerable in Tanzania.
+            GI-Desk works to end gender-based and intimate partner violence in Tanzania
+            through direct survivor support, community prevention, and advocacy.
           </p>
           <p>
-            Our community programs combine health services, counseling, outreach,
-            and caregiver support—working with partners to strengthen dignity and
-            wellbeing.
+            Our programmes combine case management, counselling, community education,
+            and women&apos;s empowerment — working with partners to build a violence-free future.
           </p>
         </DetailLayout>
 
-        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-red-50 p-6 sm:p-8">
-          <h2 className="text-lg font-semibold text-black">Support PASADA&apos;s mission</h2>
+        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-violet-50 p-6 sm:p-8">
+          <h2 className="text-lg font-semibold text-black">Support GI-Desk&apos;s mission</h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-800">
             Your partnership helps us deliver care, education, and community programs.
           </p>

@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f5f3ff; /* violet-50 light purple main background */
   --foreground: #0a0a0a;
   --muted: #71717a;
   --card: #ffffff;
   --border: rgba(24, 24, 27, 0.10);
 
   /* Brand palette */
-  --primary: #dc2626; /* red: HIV awareness / key CTAs */
-  --primary-2: #b91c1c;
-  --brand-blue: #3867d6; /* PASADA blue (from existing site) */
-  --brand-blue-2: #1f4fbf;
-  --accent: #22c55e; /* supportive green accent */
+  --primary: #7c3aed; /* deep purple - primary CTAs, headers, active nav */
+  --primary-2: #6d28d9;
+  --brand-blue: #0d9488; /* teal - accent links, icons, secondary actions */
+  --brand-blue-2: #0f766e;
+  --accent: #0d9488;
   --warning: #f59e0b; /* amber-500 */
-  --ring: rgba(220, 38, 38, 0.35);
+  --ring: rgba(124, 58, 237, 0.35);
 }
 
 @theme inline {
@@ -39,7 +39,7 @@ html {
 /* subtle page background grid */
 .bg-grid {
   background-image: radial-gradient(
-    rgba(2, 132, 199, 0.14) 1px,
+    rgba(124, 58, 237, 0.10) 1px,
     transparent 1px
   );
   background-size: 28px 28px;

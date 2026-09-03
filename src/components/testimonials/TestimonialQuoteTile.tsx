@@ -19,7 +19,7 @@ export function TestimonialQuoteTile({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.04 }}
-      className="h-full rounded-2xl bg-zinc-50 p-5 ring-1 ring-[var(--border)] sm:p-6"
+      className="h-full rounded-2xl bg-violet-50 p-5 ring-1 ring-violet-200 sm:p-6"
     >
       <p className="text-sm leading-7 text-zinc-800">&ldquo;{quote}&rdquo;</p>
       <div className="mt-4 text-sm font-semibold text-black">{name}</div>

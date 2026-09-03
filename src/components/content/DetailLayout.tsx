@@ -33,7 +33,7 @@ export function DetailLayout({
     <div>
       <Link
         href={backHref}
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-blue)] hover:underline"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] hover:underline"
       >
         <ArrowLeft className="h-4 w-4" aria-hidden="true" />
         {backLabel}

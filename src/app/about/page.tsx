@@ -2,31 +2,41 @@ import { PageShell } from "@/components/site/PageShell";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PasadaImage } from "@/components/ui/PasadaImage";
 import { media } from "@/lib/media";
-import { Eye, Heart, Scale, Sparkles, Target, Users } from "lucide-react";
+import { Eye, Heart, Scale, Shield, Target, Users } from "lucide-react";
 
 const values = [
-  { icon: Scale, title: "Justice", desc: "Fair access to care for the poorest and neediest." },
-  { icon: Users, title: "Solidarity", desc: "Walking together with families and communities." },
-  { icon: Target, title: "Sustainability", desc: "Programs built for long-term community resilience." },
-  { icon: Sparkles, title: "Efficiency", desc: "Responsible stewardship of resources and partnerships." },
-  { icon: Heart, title: "Compassion", desc: "Client-centered support rooted in dignity." },
-  { icon: Eye, title: "Respect", desc: "Confidential, non-judgmental service for all." },
+  { icon: Scale, title: "Nonpartisan", desc: "We serve all survivors regardless of political, religious, or social affiliation." },
+  { icon: Shield, title: "Confidentiality", desc: "Every case and disclosure is handled with strict privacy and respect." },
+  { icon: Users, title: "Community-centred", desc: "Walking alongside families and communities to shift harmful norms." },
+  { icon: Target, title: "Sustainability", desc: "Long-term programmes built for lasting impact in Tanzanian communities." },
+  { icon: Heart, title: "Compassion", desc: "Survivor-centred support rooted in dignity, safety and healing." },
+  { icon: Eye, title: "Accountability", desc: "Transparent stewardship of resources and partnerships." },
+];
+
+const team = [
+  { name: "Dr. Alick Kayange, MD, M.Phil. Global Health, PhD", role: "Director / Chairperson (Founder)" },
+  { name: "Dr. Faraja C. Kiwanga, MD, M. Med", role: "Program Manager / Secretary General (Co-founder)" },
+  { name: "Mrs. Lucy Kunzi", role: "Accounts Officer / Treasurer" },
+  { name: "Mr. Frank Christopher, Dipl. Env. Health Science", role: "Project Coordinator — Health" },
+  { name: "Mr. Lusubilo Kayange, BSc. Wildlife, MSc. Marine Biology", role: "Administrative Officer" },
+  { name: "Mr. Fadhili Austine, B.Sc. Education", role: "Project Coordinator — Education" },
+  { name: "Mrs. Regina Maendeleo, Dipl. Env. Health Science", role: "Project Coordinator — Livelihood" },
 ];
 
 export default function AboutPage() {
   return (
     <PageShell
-      eyebrow="About PASADA"
-      title="A faith-based organization serving all with dignity"
+      eyebrow="About GI-Desk"
+      title="Nonpartisan, nonreligious — united against gender-based violence"
       heroImageSrc={media.hero.about}
     >
       <div className="grid gap-10 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
           <AnimatedSection>
-            <div className="relative h-56 overflow-hidden rounded-3xl border-2 border-[var(--primary)] bg-zinc-100 sm:h-72">
+            <div className="relative h-56 overflow-hidden rounded-3xl border-2 border-[var(--primary)] bg-violet-100 sm:h-72">
               <PasadaImage
                 src={media.about.community}
-                alt="PASADA community work"
+                alt="GI-Desk community work"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 700px, 92vw"
@@ -37,136 +47,95 @@ export default function AboutPage() {
 
           <AnimatedSection delay={0.05}>
             <p className="text-sm leading-7 text-zinc-800">
-              Pastoral Activities and Services for people with AIDS Dar es Salaam
-              Archdiocese (PASADA (T)) is a faith-based Organization operating
-              under the Roman Catholic Archdiocese of Dar es Salaam. PASADA was
-              formed in <strong>August 1992</strong> when a small group of people with HIV
-              gathered to seek mutual aid and support.
+              Gender Based and Intimate (GI-Desk) is a nonpartisan, apolitical, nonreligious,
+              charitable non-profit organisation registered in August 2023 under the
+              Non-Governmental Organisations Act No. 24 of 2002 (Reg. No. ooNGO/R/5824).
+              We exist to support people experiencing gender-based and intimate partner violence
+              across Tanzania — providing direct survivor services, community education, and
+              advocacy to address the root causes of GBV.
             </p>
-            <p className="mt-4 text-sm leading-7 text-zinc-800">
-              Although sponsored by the Roman Catholic Church, the services
-              offered by PASADA are available to{" "}
-              <strong>all individuals without discrimination</strong> and are provided{" "}
-              <strong>free of charge</strong>.
-            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.08}>
+            <div className="space-y-3">
+              <h2 className="text-lg font-semibold">Mission</h2>
+              <p className="text-sm leading-7 text-zinc-800">
+                A nonpartisan, apolitical, nonreligious, charitable non-profit to support
+                people experiencing gender-based and intimate partner violence.
+              </p>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border-2 border-[var(--primary)] bg-gradient-to-br from-red-50 to-white p-6 shadow-sm">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--primary)] text-white">
-                  <Target className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <h2 className="mt-4 text-lg font-semibold text-black">Mission</h2>
-                <p className="mt-3 text-sm leading-7 text-zinc-800">
-                  Responding to the call of faith, PASADA (T) strives to provide
-                  and maintain quality, caring and compassionate services and
-                  support to people infected and affected by HIV and AIDS in
-                  Tanzania—with particular attention to the poorest and the
-                  neediest—through a holistic approach with the light of the
-                  Gospel, emphasizing justice, solidarity, sustainability and
-                  efficiency.
-                </p>
-              </div>
-              <div className="rounded-2xl border-2 border-black bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-blue)] text-white">
-                  <Eye className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <h2 className="mt-4 text-lg font-semibold text-black">Vision</h2>
-                <p className="mt-3 text-sm leading-7 text-zinc-800 italic">
-                  &ldquo;A society in which all people can live life to their full
-                  potential with dignity and respect.&rdquo;
-                </p>
-              </div>
+            <div className="space-y-3">
+              <h2 className="text-lg font-semibold">Vision</h2>
+              <p className="text-sm leading-7 text-zinc-800">
+                To deal with all forms of gender-based violence including intimate partner
+                violence, harassment, exploitation and abuse, child/early/forced marriage,
+                harmful gender norms, and economic exploitation — ensuring gender equality
+                for people of all genders through the elimination of GBV and the increased
+                visibility, voice, and opportunity of women and girls.
+              </p>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.15}>
-            <h2 className="text-lg font-semibold text-black">Core values</h2>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {values.map((v) => (
-                <div
-                  key={v.title}
-                  className="flex gap-3 rounded-xl border-2 border-black/10 bg-white p-4 transition hover:border-[var(--primary)] hover:shadow-md"
-                >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-red-50 text-[var(--primary)] ring-1 ring-[var(--primary)]">
-                    <v.icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <div className="text-sm font-semibold text-black">{v.title}</div>
-                    <p className="mt-1 text-xs leading-5 text-zinc-700">{v.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.2}>
-            <div className="rounded-2xl border-2 border-black bg-zinc-50 p-6">
-              <div className="text-sm font-semibold text-black">What we focus on</div>
-              <ul className="mt-3 grid gap-2 text-sm text-zinc-800 sm:grid-cols-2">
-                <li>HIV testing and counseling</li>
-                <li>Home-based and palliative care</li>
-                <li>Comprehensive HIV care and treatment support</li>
-                <li>PMTCT screening</li>
-                <li>Cervical cancer screening</li>
-                <li>NCD screening</li>
-                <li>Support to OVC and caregivers</li>
-                <li>Psychosocial support and counseling</li>
-                <li>Community sensitization and education</li>
-                <li>Capacity development</li>
-              </ul>
+          <AnimatedSection delay={0.12}>
+            <div className="space-y-3">
+              <h2 className="text-lg font-semibold">Our story</h2>
+              <p className="text-sm leading-7 text-zinc-800">
+                GI-Desk was founded in 2023 in response to rising cases of gender-based violence
+                in underserved communities across Mainland Tanzania. Driven by the lived reality
+                of GBV survivors — physical and sexual intimate partner violence, non-partner
+                sexual violence, female genital mutilation, and early and forced marriage — our
+                founders started with counselling services and community education, relying on
+                donations and volunteer work. We operate from our head office in Bagamoyo
+                District, Pwani Region, with a branch in Mbezi Beach, Dar es Salaam.
+              </p>
             </div>
           </AnimatedSection>
         </div>
 
-        <aside className="space-y-4">
-          <AnimatedSection>
-            <div className="relative h-48 overflow-hidden rounded-2xl border-2 border-[var(--primary)]">
-              <PasadaImage
-                src={media.about.care}
-                alt="PASADA care services"
-                fill
-                className="object-cover"
-                sizes="400px"
-              />
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.05}>
-            <div className="rounded-2xl border-2 border-[var(--primary)] bg-red-50 p-6">
-              <div className="text-sm font-semibold text-black">Get inspired—take action</div>
-              <p className="mt-2 text-sm leading-6 text-zinc-800">
-                Donors, volunteers and partners help us strengthen community
-                wellbeing and bring hope to families.
-              </p>
-              <div className="mt-4 text-sm font-semibold text-[var(--primary)] underline">
-                <a href="/get-involved">Get involved</a>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.1}>
-            <div className="rounded-2xl border-2 border-black bg-white p-6">
-              <div className="text-sm font-semibold text-black">Contact</div>
-              <div className="mt-3 space-y-2 text-sm text-zinc-800">
-                <div>
-                  Email:{" "}
-                  <a className="font-semibold text-black underline" href="mailto:info@pasada.or.tz">
-                    info@pasada.or.tz
-                  </a>
-                </div>
-                <div>
-                  Phone:{" "}
-                  <a className="font-semibold text-black underline" href="tel:+255222866618">
-                    +255 22 286 6618
-                  </a>
-                </div>
-              </div>
+        <aside className="space-y-8">
+          <AnimatedSection delay={0.06}>
+            <div className="rounded-2xl border-2 border-[var(--primary)] bg-white p-6 shadow-sm">
+              <h2 className="text-base font-semibold text-zinc-950">Our values</h2>
+              <ul className="mt-4 space-y-4">
+                {values.map(({ icon: Icon, title, desc }) => (
+                  <li key={title} className="flex gap-3">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-violet-50 text-[var(--primary)]">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <div className="text-sm font-semibold">{title}</div>
+                      <div className="text-xs leading-5 text-zinc-600">{desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </AnimatedSection>
         </aside>
       </div>
+
+      <AnimatedSection delay={0.15}>
+        <section className="mt-14">
+          <h2 className="text-2xl font-semibold tracking-tight">Our team</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-700">
+            GI-Desk is led by a multidisciplinary team of health professionals, educators, and community experts.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member) => (
+              <div
+                key={member.name}
+                className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm"
+              >
+                <div className="text-sm font-semibold text-zinc-950">{member.name}</div>
+                <div className="mt-1 text-xs text-[var(--brand-blue)]">{member.role}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
     </PageShell>
   );
 }

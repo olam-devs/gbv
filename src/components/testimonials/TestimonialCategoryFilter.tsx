@@ -59,7 +59,7 @@ export function TestimonialCategoryFilter({
               : "border-[var(--primary)] hover:border-black",
           )}
         >
-          <div className="relative aspect-[4/3] bg-gradient-to-br from-red-50 via-white to-blue-50">
+          <div className="relative aspect-[4/3] bg-gradient-to-br from-violet-100 via-violet-50 to-purple-50">
             <div className="absolute inset-0 grid place-items-center p-6">
               <span className="text-center text-lg font-semibold text-black">All voices</span>
             </div>
@@ -140,7 +140,7 @@ export function TestimonialCategoryFilter({
         </div>
 
         {filtered.length === 0 ? (
-          <p className="mt-8 rounded-2xl bg-zinc-50 p-6 text-sm text-zinc-700 ring-1 ring-[var(--border)]">
+          <p className="mt-8 rounded-2xl bg-violet-50 p-6 text-sm text-zinc-700 ring-1 ring-violet-200">
             No testimonials in this category yet. Try <strong>All voices</strong> or
             another category.
           </p>

@@ -50,9 +50,9 @@ function FormCard({
 }
 
 export function InvolvementForms({
-  volunteerEmail = "volunteer@pasada.or.tz",
-  partnerEmail = "info@pasada.or.tz",
-  donateEmail = "info@pasada.or.tz",
+  volunteerEmail = "genderdeskhelp@gmail.com",
+  partnerEmail = "genderdeskhelp@gmail.com",
+  donateEmail = "genderdeskhelp@gmail.com",
 }: {
   volunteerEmail?: string;
   partnerEmail?: string;
@@ -84,7 +84,7 @@ export function InvolvementForms({
       {active === "volunteer" && (
         <FormCard
           title="Volunteer application"
-          description="Share your details and how you would like to support PASADA programs."
+          description="Share your details and how you would like to support GI-Desk. A minimum commitment of two weeks is required."
         >
           <form
             className="mt-6 grid gap-4 sm:grid-cols-2"
@@ -140,7 +140,7 @@ export function InvolvementForms({
       {active === "partner" && (
         <FormCard
           title="Partnership inquiry"
-          description="Organizations and institutions can propose collaboration with PASADA."
+          description="Organizations and institutions can propose collaboration with GI-Desk."
         >
           <form
             className="mt-6 grid gap-4 sm:grid-cols-2"
@@ -241,7 +241,7 @@ export function InvolvementForms({
               <FormTextarea
                 name="message"
                 rows={4}
-                placeholder="Any notes for PASADA..."
+                placeholder="Any notes for GI-Desk..."
               />
             </label>
             <div className="sm:col-span-2">

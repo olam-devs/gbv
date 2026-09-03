@@ -20,40 +20,7 @@ export type TenderItem = {
   contactEmail?: string;
 };
 
-const SAMPLE: TenderItem[] = [
-  {
-    _id: "tender-sample-1",
-    title: "Tender for Delivery of Car Hire Service",
-    slug: "tender-for-delivery-of-car-hire-service",
-    tenderNumber: "PASADA/T/SAMPLE/01",
-    status: "Closed",
-    publishedAt: "2026-01-10",
-    deadline: "2026-01-31T17:00:00+03:00",
-    summary:
-      "PASADA invited competent and licensed car hire service providers to submit bids for the provision of vehicle hire services. This is a sample listing shown until a live tender is posted in Sanity Studio.",
-    imageUrl: media.hero.careers,
-    content: [
-      {
-        _type: "block",
-        style: "h2",
-        children: [{ _type: "span", text: "Scope of the tender" }],
-        markDefs: [],
-      },
-      {
-        _type: "block",
-        style: "normal",
-        children: [
-          {
-            _type: "span",
-            text: "Interested and eligible car hire companies were invited to submit technical and financial proposals for the provision of vehicle hire services to support PASADA's program activities.",
-          },
-        ],
-        markDefs: [],
-      },
-    ],
-    contactEmail: "info@pasada.or.tz",
-  },
-];
+const SAMPLE: TenderItem[] = [];
 
 const listQuery = groq`
   *[_type == "tender"] | order(deadline asc) {

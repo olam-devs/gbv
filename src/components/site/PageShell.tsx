@@ -21,13 +21,13 @@ export function PageShell({
     <div className="flex min-h-full flex-col">
       <Header />
       <main className="flex-1">
-        <section className="relative min-h-[min(52vh,480px)] border-b border-[var(--border)] bg-zinc-100 sm:min-h-[min(58vh,540px)] lg:min-h-[min(64vh,620px)]">
+        <section className="relative min-h-[min(52vh,480px)] border-b border-white/15 bg-[var(--primary)] sm:min-h-[min(58vh,540px)] lg:min-h-[min(64vh,620px)]">
           {heroImageSrc ? (
             <>
               <div className="absolute inset-0">
                 <PasadaImage
                   src={heroImageSrc}
-                  alt={logoHero ? "PASADA logo" : ""}
+                  alt={logoHero ? "GI-Desk logo" : ""}
                   fill
                   priority
                   className={
@@ -39,7 +39,7 @@ export function PageShell({
                 />
               </div>
               <div
-                className="absolute inset-0 bg-gradient-to-t from-white via-white/75 to-white/25"
+                className="absolute inset-0 bg-gradient-to-t from-[var(--primary)] via-[var(--primary)]/80 to-transparent"
                 aria-hidden="true"
               />
             </>
@@ -47,11 +47,11 @@ export function PageShell({
 
           <Container className="relative flex min-h-[inherit] flex-col justify-end py-10 sm:py-14">
             {eyebrow ? (
-              <div className="text-xs font-semibold tracking-wide text-[var(--brand-blue)]">
+              <div className="text-xs font-semibold tracking-wide text-violet-300">
                 {eyebrow}
               </div>
             ) : null}
-            <h1 className="mt-2 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
+            <h1 className="mt-2 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               {title}
             </h1>
           </Container>

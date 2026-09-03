@@ -38,17 +38,17 @@ export default async function ServiceDetailPage({
           content={service.content}
         >
           <p>
-            PASADA delivers this service with dignity, confidentiality and respect
-            for every client—without discrimination and free of charge.
+            GI-Desk delivers this service with dignity, confidentiality and respect
+            for every survivor — without discrimination, stigma, or judgment.
           </p>
           <p>
-            Our team supports clients and families through counseling, education,
-            follow-up care and referrals, working closely with health facilities
-            and community stakeholders.
+            Our team supports survivors and families through case management, counselling,
+            referrals and follow-up care, working closely with health facilities,
+            legal services, and community stakeholders.
           </p>
         </DetailLayout>
 
-        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-red-50 p-6">
+        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-violet-50 p-6">
           <p className="text-sm text-zinc-800">Need this service or have questions?</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Contact us</ButtonLink>

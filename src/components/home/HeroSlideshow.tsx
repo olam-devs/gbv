@@ -41,7 +41,7 @@ export function HeroSlideshow({ images }: { images: string[] }) {
                 <div key={src} className="relative min-w-0 flex-[0_0_100%]">
                   <PasadaImage
                     src={src}
-                    alt={logoSlide ? "PASADA logo" : "PASADA community and health programs"}
+                    alt={logoSlide ? "GI-Desk logo" : "GI-Desk community programs"}
                     width={1200}
                     height={900}
                     priority

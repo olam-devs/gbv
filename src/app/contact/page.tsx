@@ -12,15 +12,15 @@ export default function ContactPage() {
   return (
     <PageShell
       eyebrow="Contact"
-      title="Reach out to PASADA"
+      title="Reach out to GI-Desk"
       heroImageSrc={media.hero.contact}
     >
       <AnimatedSection>
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-4">
             <p className="text-sm leading-7 text-zinc-800">
-              Whether you want to donate, volunteer, partner, or learn more about
-              our services—contact us and we&apos;ll respond as soon as possible.
+              Whether you want to donate, volunteer, partner, refer a survivor, or
+              learn more about our services — contact us and we&apos;ll respond as soon as possible.
             </p>
 
             <div className="rounded-2xl border-2 border-black bg-white p-6 shadow-sm">
@@ -30,21 +30,29 @@ export default function ContactPage() {
                   Email:{" "}
                   <a
                     className="font-semibold text-black underline"
-                    href="mailto:info@pasada.or.tz"
+                    href="mailto:genderdeskhelp@gmail.com"
                   >
-                    info@pasada.or.tz
+                    genderdeskhelp@gmail.com
                   </a>
                 </div>
                 <div>
                   Phone:{" "}
                   <a
                     className="font-semibold text-black underline"
-                    href="tel:+255222866618"
+                    href="tel:+255757128222"
                   >
-                    +255 22 286 6618
+                    +255 757 128 222
+                  </a>{" "}
+                  /{" "}
+                  <a
+                    className="font-semibold text-black underline"
+                    href="tel:+255714841324"
+                  >
+                    +255 714 841 324
                   </a>
                 </div>
-                <div>Location: Dar es Salaam, Tanzania</div>
+                <div>Head office: Kiharaka-kiembeni St, Mapinga, Bagamoyo, Pwani</div>
+                <div>Branch: Mbezi Beach kwa Zena, Kinondoni, Dar es Salaam</div>
               </div>
             </div>
           </div>
@@ -58,7 +66,7 @@ export default function ContactPage() {
 
             <form
               className="mt-6 grid gap-4"
-              action="mailto:info@pasada.or.tz"
+              action="mailto:genderdeskhelp@gmail.com"
               method="post"
               encType="text/plain"
             >

@@ -66,7 +66,7 @@ export const job = defineType({
       name: "applyEmail",
       title: "Apply email",
       type: "string",
-      initialValue: "recruitment@pasada.or.tz",
+      initialValue: "genderdeskhelp@gmail.com",
     }),
     defineField({
       name: "isActive",

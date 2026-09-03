@@ -29,9 +29,9 @@ export default async function ProjectsPage() {
     >
       <AnimatedSection>
         <p className="max-w-3xl text-sm leading-7 text-zinc-800">
-          PASADA works with partners on community-based initiatives that strengthen
-          prevention, care and resilience. Filter by status or category, and open
-          any project for full details.
+          GI-Desk works with partners on community-based initiatives that strengthen
+          GBV prevention, survivor support, and community resilience. Filter by status
+          or category, and open any project for full details.
         </p>
       </AnimatedSection>
 

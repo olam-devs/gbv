@@ -12,12 +12,12 @@ export default async function JobsPage() {
   return (
     <PageShell
       eyebrow="Careers"
-      title="Join the PASADA team"
+      title="Join the GI-Desk team"
       heroImageSrc={media.hero.careers}
     >
       <AnimatedSection>
         <p className="max-w-3xl text-sm leading-7 text-zinc-800">
-          Explore open roles at PASADA. Open each listing for role details and
+          Explore open roles at GI-Desk. Open each listing for role details and
           application guidance.
         </p>
       </AnimatedSection>
@@ -32,7 +32,7 @@ export default async function JobsPage() {
               <h2 className="text-lg font-semibold text-black group-hover:text-[var(--primary)]">
                 <Link href={`/jobs/${job.slug}`}>{job.title}</Link>
               </h2>
-              <span className="shrink-0 rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-[var(--primary)] ring-1 ring-[var(--primary)]">
+              <span className="shrink-0 rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-[var(--primary)] ring-1 ring-[var(--primary)]">
                 {job.employmentType}
               </span>
             </div>

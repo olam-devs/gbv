@@ -59,21 +59,20 @@ export default async function ProjectDetailPage({
           content={project.content}
         >
           <p>
-            This project reflects PASADA&apos;s commitment to compassionate,
-            community-centered health programming across Dar es Salaam and partner
-            regions.
+            This project reflects GI-Desk&apos;s commitment to community-centred,
+            survivor-first programming across Tanzania.
           </p>
           <p>
             We work with communities and partners to strengthen prevention,
-            improve referral pathways, and support clients and caregivers with
-            dignity and respect.
+            improve GBV referral pathways, and support survivors and their families
+            with dignity and respect.
           </p>
         </DetailLayout>
 
-        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-red-50 p-6">
-          <p className="text-sm text-zinc-800">Interested in partnering on this program?</p>
+        <div className="mt-12 rounded-2xl border-2 border-[var(--primary)] bg-violet-50 p-6">
+          <p className="text-sm text-zinc-800">Interested in partnering on this project?</p>
           <div className="mt-4">
-            <ButtonLink href="/contact">Contact PASADA</ButtonLink>
+            <ButtonLink href="/contact">Contact GI-Desk</ButtonLink>
           </div>
         </div>
       </AnimatedSection>

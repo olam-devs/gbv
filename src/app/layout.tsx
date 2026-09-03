@@ -16,16 +16,16 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: {
-    default: "PASADA Tanzania | Care, Hope & Community Impact",
-    template: "%s | PASADA Tanzania",
+    default: "GI-Desk | Stop Gender-Based Violence in Tanzania",
+    template: "%s | GI-Desk",
   },
   description:
-    "PASADA (T) provides quality, caring, compassionate services and support to people infected and affected by HIV and AIDS in Tanzania—prioritizing the poorest and neediest through a holistic approach.",
-  metadataBase: new URL("https://pasada.or.tz"),
+    "GI-Desk (Gender Based and Intimate) is a nonpartisan, nonreligious non-profit supporting survivors of gender-based and intimate partner violence in Tanzania.",
+  metadataBase: new URL("https://gbvdesk.org"),
   openGraph: {
-    title: "PASADA Tanzania",
+    title: "GI-Desk — Stop Violence",
     description:
-      "Care, hope, and community impact—supporting people infected and affected by HIV and AIDS in Tanzania.",
+      "Supporting survivors of gender-based and intimate partner violence in Tanzania.",
     type: "website",
   },
   icons: [{ rel: "icon", url: "/brand/logo.jpg" }],
@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-950 selection:bg-emerald-200/70 selection:text-emerald-950">
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-zinc-950 selection:bg-violet-200/70 selection:text-violet-950">
         {children}
       </body>
     </html>
