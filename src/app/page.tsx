@@ -235,7 +235,7 @@ export default async function Home() {
                   Help us end gender-based violence in Tanzania
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-violet-100">
-                  Donors, partners and volunteers make every survivor's journey to safety possible.
+                  Donors, partners and volunteers make every survivor&apos;s journey to safety possible.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">

@@ -34,7 +34,8 @@ export const media = {
   placeholder: "/placeholder/hero.svg",
 } as const;
 
-export function isPasadaCdn(_url: string) {
+export function isPasadaCdn(url: string) {
+  void url;
   return false;
 }
 
