@@ -10,6 +10,9 @@ export default async function ProjectsPage() {
     getProjectCategories(),
   ]);
 
+  const capitalize = (s?: string) =>
+    s ? (s.charAt(0).toUpperCase() + s.slice(1)) as "Ongoing" | "Completed" : "Ongoing";
+
   const items = projects.map((p) => ({
     _id: p._id,
     title: p.title,
@@ -18,7 +21,7 @@ export default async function ProjectsPage() {
     imageUrl: p.imageUrl,
     badge: p.status,
     categorySlug: p.categorySlug,
-    status: p.status,
+    status: capitalize(p.status),
   }));
 
   return (

@@ -51,8 +51,6 @@ export default async function BlogPostPage({
           summary={post.excerpt}
           badge={post.category}
           imageUrl={post.imageUrl}
-          galleryUrls={post.galleryUrls}
-          videoUrl={post.videoUrl}
           content={post.content}
         >
           <p>

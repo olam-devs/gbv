@@ -108,7 +108,9 @@ export function getAllBlogSlugs(): string[] {
   return SAMPLE.map((p) => p.slug);
 }
 
-export async function getBlogCategories(): Promise<{ title: string; slug: string; count: number }[]> {
+export type BlogCategory = { title: string; slug: string; count: number };
+
+export async function getBlogCategories(): Promise<BlogCategory[]> {
   const all = await getBlogPosts();
   const map = new Map<string, { title: string; slug: string; count: number }>();
   for (const p of all) {

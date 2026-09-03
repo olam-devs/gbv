@@ -10,6 +10,7 @@ export type TestimonialItem = {
   category: string;
   categorySlug: string;
   featured?: boolean;
+  sortOrder?: number;
 };
 
 const SAMPLE: TestimonialItem[] = [
@@ -103,7 +104,10 @@ export async function getTestimonials(opts: GetTestimonialsOptions = {}): Promis
   return items;
 }
 
-export async function getTestimonialCategories(): Promise<{ title: string; slug: string; count: number }[]> {
+export type Testimonial = TestimonialItem;
+export type TestimonialCategory = { title: string; slug: string; count: number; imageUrl?: string };
+
+export async function getTestimonialCategories(): Promise<TestimonialCategory[]> {
   const all = await getTestimonials();
   const map = new Map<string, { title: string; slug: string; count: number }>();
   for (const t of all) {
