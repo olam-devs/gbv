@@ -27,7 +27,7 @@ export default async function ServicesPage() {
       heroImageSrc={media.hero.services}
     >
       <AnimatedSection>
-        <p className="max-w-3xl text-sm leading-7 text-zinc-800">
+        <p className="text-sm leading-7 text-zinc-800">
           GI-Desk delivers holistic GBV response services — from direct survivor
           support and clinical care to community prevention and women&apos;s empowerment.
           Filter by category or open any service for full details.

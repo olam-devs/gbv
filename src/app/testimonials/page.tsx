@@ -17,10 +17,10 @@ export default async function TestimonialsPage() {
     <PageShell
       eyebrow="Testimonials"
       title="Voices from the community"
-      heroImageSrc={media.hero.blog}
+      heroImageSrc={media.hero.testimonials}
     >
       <AnimatedSection>
-        <p className="max-w-3xl text-sm leading-7 text-zinc-800">
+        <p className="text-sm leading-7 text-zinc-800">
           Stories and reflections from clients, caregivers, volunteers and
           partners who have walked with GI-Desk. Pick a category to see its quote
           cards, or choose <strong>All voices</strong> to browse every story

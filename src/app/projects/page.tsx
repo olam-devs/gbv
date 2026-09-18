@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
       heroImageSrc={media.hero.projects}
     >
       <AnimatedSection>
-        <p className="max-w-3xl text-sm leading-7 text-zinc-800">
+        <p className="text-sm leading-7 text-zinc-800">
           GI-Desk works with partners on community-based initiatives that strengthen
           GBV prevention, survivor support, and community resilience. Filter by status
           or category, and open any project for full details.

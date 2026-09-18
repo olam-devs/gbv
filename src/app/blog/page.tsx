@@ -17,9 +17,9 @@ export default async function BlogPage() {
       heroImageSrc={media.hero.blog}
     >
       <AnimatedSection>
-        <p className="max-w-3xl text-sm leading-7 text-zinc-800">
-          News, events, and community stories. Browse by category, read structured
-          articles, and watch short videos when available.
+        <p className="text-sm leading-7 text-zinc-800">
+          News, events, and community stories from GI-Desk. Browse by category and read
+          articles on GBV awareness, survivor support, and community action.
         </p>
       </AnimatedSection>
 

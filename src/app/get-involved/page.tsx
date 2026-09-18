@@ -15,7 +15,7 @@ export default async function GetInvolvedPage() {
       heroImageSrc={media.hero.getInvolved}
     >
       <AnimatedSection>
-        <p className="max-w-3xl text-sm leading-7 text-zinc-800">
+        <p className="text-sm leading-7 text-zinc-800">
           Choose how you want to support GI-Desk. Complete the form for
           volunteering, partnerships, or donations — all enquiries go directly to our team.
         </p>
