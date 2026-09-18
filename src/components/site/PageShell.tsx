@@ -21,7 +21,7 @@ export function PageShell({
     <div className="flex min-h-full flex-col">
       <Header />
       <main className="flex-1">
-        <section className="relative min-h-[min(52vh,480px)] border-b border-white/15 bg-[var(--primary)] sm:min-h-[min(58vh,540px)] lg:min-h-[min(64vh,620px)]">
+        <section className="relative min-h-[min(34vh,280px)] border-b border-white/15 bg-[var(--primary)] sm:min-h-[min(38vh,320px)] lg:min-h-[min(42vh,360px)]">
           {heroImageSrc ? (
             <>
               <div className="absolute inset-0">
@@ -56,7 +56,7 @@ export function PageShell({
             </h1>
           </Container>
         </section>
-        <Container className="py-12">{children}</Container>
+        <Container className="py-8">{children}</Container>
       </main>
       <Footer />
     </div>

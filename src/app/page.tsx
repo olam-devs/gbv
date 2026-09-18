@@ -119,7 +119,7 @@ export default async function Home() {
       </section>
 
       <section className="border-t border-white/15 bg-[var(--primary)]">
-        <Container className="py-16">
+        <Container className="py-10">
           <AnimatedSection>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
@@ -157,7 +157,7 @@ export default async function Home() {
       </section>
 
       <section className="border-t border-[var(--border)] bg-white">
-        <Container className="py-16">
+        <Container className="py-10">
           <AnimatedSection>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
@@ -192,7 +192,7 @@ export default async function Home() {
 
       {featuredPosts.length > 0 ? (
         <section className="border-t border-white/15 bg-[var(--primary)]">
-          <Container className="py-16">
+          <Container className="py-10">
             <AnimatedSection>
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
@@ -227,7 +227,7 @@ export default async function Home() {
       ) : null}
 
       <section className="border-t border-white/15 bg-[var(--primary)]">
-        <Container className="py-16">
+        <Container className="py-10">
           <div className="relative overflow-hidden rounded-3xl border-2 border-white/25 bg-white/10 p-8 backdrop-blur sm:p-10">
             <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
@@ -261,7 +261,7 @@ export default async function Home() {
       </section>
 
       <section className="border-t border-[var(--border)] bg-white">
-        <Container className="py-16">
+        <Container className="py-10">
           <div className="grid items-start gap-8 lg:grid-cols-5">
             <div className="lg:col-span-2">
               <div className="text-xs font-semibold tracking-wide text-[var(--primary)]">

@@ -30,8 +30,8 @@ export default function AboutPage() {
       title="Nonpartisan, nonreligious — united against gender-based violence"
       heroImageSrc={media.hero.about}
     >
-      <div className="grid gap-10 lg:grid-cols-3">
-        <div className="space-y-8 lg:col-span-2">
+      <div className="grid gap-8 lg:grid-cols-3">
+        <div className="space-y-6 lg:col-span-2">
           <AnimatedSection>
             <div className="relative h-56 overflow-hidden rounded-3xl border-2 border-[var(--primary)] bg-violet-100 sm:h-72">
               <PasadaImage
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </div>
 
       <AnimatedSection delay={0.15}>
-        <section className="mt-14">
+        <section className="mt-8">
           <h2 className="text-2xl font-semibold tracking-tight">Our team</h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-700">
             GI-Desk is led by a multidisciplinary team of health professionals, educators, and community experts.

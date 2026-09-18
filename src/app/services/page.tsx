@@ -28,8 +28,9 @@ export default async function ServicesPage() {
     >
       <AnimatedSection>
         <p className="max-w-3xl text-sm leading-7 text-zinc-800">
-          Holistic services for people infected and affected by HIV and AIDS—open
-          each service for detailed information and photo galleries.
+          GI-Desk delivers holistic GBV response services — from direct survivor
+          support and clinical care to community prevention and women&apos;s empowerment.
+          Filter by category or open any service for full details.
         </p>
       </AnimatedSection>
 
