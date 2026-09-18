@@ -49,7 +49,12 @@ export async function getBlogPosts(opts: GetBlogPostsOptions = {}): Promise<Blog
   if (sanityConfigured) {
     try {
       const rows = await sanityClient.fetch<BlogPost[]>(query);
-      if (rows?.length) items = rows.map((r, idx) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : (SAMPLE.find((b) => b.slug === r.slug)?.imageUrl ?? [U("1602306115889-fe8d26d2439a"), U("1607868894064-2b6e7ed1b324"), U("1779357807569-18d3df9df645")][idx % 3]) }));
+      const blogFallbacks = [
+        `https://images.unsplash.com/photo-1602306115889-fe8d26d2439a?auto=format&fit=crop&w=800&q=80`,
+        `https://images.unsplash.com/photo-1607868894064-2b6e7ed1b324?auto=format&fit=crop&w=800&q=80`,
+        `https://images.unsplash.com/photo-1779357807569-18d3df9df645?auto=format&fit=crop&w=800&q=80`,
+      ];
+      if (rows?.length) items = rows.map((r, idx) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : blogFallbacks[idx % blogFallbacks.length] }));
     } catch {}
   }
 
