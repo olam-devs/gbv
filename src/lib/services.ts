@@ -129,16 +129,29 @@ const SAMPLE: ServiceItem[] = [
   },
   {
     _id: "s9",
-    title: "Volunteer & Peer Support Programme",
-    slug: "volunteer-peer-support",
+    title: "Addressing Root Causes of GBV & IPV",
+    slug: "root-causes-gbv",
     summary:
-      "Mobilising and training community volunteers and peer supporters who extend GI-Desk's reach into neighbourhoods, providing first-line support and referrals to survivors.",
+      "Working to address all root causes that motivate gender-based violence (GBV) and intimate partner violence (IPV) — and providing sustained support to survivors on their journey to safety and healing.",
     imageUrl: U("1488521787991-ed7bbaae773c"),
     galleryUrls: [],
     sortOrder: 9,
     featured: false,
-    category: "Community",
-    categorySlug: "community",
+    category: "Prevention",
+    categorySlug: "prevention",
+  },
+  {
+    _id: "s10",
+    title: "Gender Equality & Women's Empowerment",
+    slug: "gender-equality",
+    summary:
+      "Ensuring gender equality for people of all genders through the elimination of GBV, and increasing the visibility, voice, and opportunities of women and girls in leadership and education.",
+    imageUrl: U("1594608661623-aa0bd3a69d98"),
+    galleryUrls: [],
+    sortOrder: 10,
+    featured: false,
+    category: "Empowerment",
+    categorySlug: "empowerment",
   },
 ];
 

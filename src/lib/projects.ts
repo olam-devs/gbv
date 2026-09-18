@@ -42,24 +42,10 @@ const SAMPLE: ProjectItem[] = [
   },
   {
     _id: "p2",
-    title: "16 Days of Activism Campaign",
-    slug: "16-days-activism",
-    summary:
-      "Annual campaign aligned with the international 16 Days of Activism Against Gender-Based Violence (25 Nov – 10 Dec), featuring community dialogues, social media campaigns, and survivor solidarity events.",
-    imageUrl: U("1594608661623-aa0bd3a69d98"),
-    galleryUrls: [],
-    status: "ongoing",
-    tag: "Campaigns",
-    category: "Campaigns",
-    categorySlug: "campaigns",
-    featured: true,
-  },
-  {
-    _id: "p3",
     title: "Social Media GBV Campaigns",
     slug: "social-media-campaigns",
     summary:
-      "Planned digital campaigns — #StopGBV, #EndGBV, #BreakTheSilence — using survivor stories, educational infographics, live expert Q&As, and influencer partnerships to raise awareness and mobilise action across Tanzania.",
+      "Planned digital campaigns using hashtags #StopGBV, #EndGBV, and #BreakTheSilence — sharing survivor stories, educational posts, live expert Q&As, and influencer collaborations to raise awareness across Tanzania. Campaigns include tie-ins with the 16 Days of Activism Against GBV (25 Nov – 10 Dec).",
     imageUrl: U("1488521787991-ed7bbaae773c"),
     galleryUrls: [],
     status: "planned",

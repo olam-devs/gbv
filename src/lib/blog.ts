@@ -48,12 +48,12 @@ const SAMPLE: BlogPost[] = [
   },
   {
     _id: "b3",
-    title: "GI-Desk Launches School Awareness Programme in Bagamoyo",
-    slug: "school-awareness-programme-bagamoyo",
+    title: "GBV Awareness in Schools: Why It Starts Early",
+    slug: "gbv-awareness-schools",
     excerpt:
-      "GI-Desk has begun a structured GBV awareness programme in primary and secondary schools in Bagamoyo District, reaching over 300 students in the pilot phase.",
-    category: "Events",
-    categorySlug: "events",
+      "GI-Desk runs GBV awareness sessions for in-school and out-of-school adolescents in primary and secondary schools — helping young people recognise, prevent, and respond to gender-based violence.",
+    category: "Education",
+    categorySlug: "education",
     imageUrl: U("1503676260728-1c00da094a0b"),
     publishedAt: "2025-09-01",
     featured: true,
