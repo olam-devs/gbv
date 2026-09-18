@@ -4,12 +4,11 @@ const U = (id: string, w = 1200) =>
 export const media = {
   logo: "/brand/logo.jpg",
   hero: {
-    // Homepage slideshow — real GI-Desk photos uploaded by client
+    // Homepage slideshow — 4 real GI-Desk photos uploaded by client
     home: [
-      "/images/hero-stop-gbv.png",       // Hand: STOP GBV — awareness
-      "/images/hero-woman-window.png",   // African woman looking out window — survivor
-      "/images/hero-family-1.webp",      // Tanzanian mother with daughters — community
+      "/images/hero-woman-window.png",   // African woman at window — survivor resilience
       "/images/hero-hands-eyes.png",     // Hands covering eyes — silenced voices
+      "/images/hero-family-1.webp",      // Tanzanian mother with daughters — community
       "/images/hero-family-2.webp",      // Family warmth — hope and healing
     ],
     about:      U("1779357807569-18d3df9df645"), // Women in kitenge at community meeting
