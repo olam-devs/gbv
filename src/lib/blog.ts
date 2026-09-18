@@ -30,7 +30,7 @@ const SAMPLE: BlogPost[] = [
       "Every year from 25 November to 10 December the world unites against gender-based violence. Here is how GI-Desk marks the campaign and what communities can do to get involved.",
     category: "Awareness",
     categorySlug: "awareness",
-    imageUrl: U("1594608661623-aa0bd3a69d98"),
+    imageUrl: U("1602306115889-fe8d26d2439a"),
     publishedAt: "2025-11-25",
     featured: true,
   },
@@ -42,7 +42,7 @@ const SAMPLE: BlogPost[] = [
       "Intimate partner violence often begins subtly. Recognising the early warning signs can help survivors and their support networks act before the situation escalates.",
     category: "Education",
     categorySlug: "education",
-    imageUrl: U("1488521787991-ed7bbaae773c"),
+    imageUrl: U("1607868894064-2b6e7ed1b324"),
     publishedAt: "2025-10-10",
     featured: true,
   },
@@ -54,7 +54,7 @@ const SAMPLE: BlogPost[] = [
       "GI-Desk runs GBV awareness sessions for in-school and out-of-school adolescents in primary and secondary schools — helping young people recognise, prevent, and respond to gender-based violence.",
     category: "Education",
     categorySlug: "education",
-    imageUrl: U("1503676260728-1c00da094a0b"),
+    imageUrl: U("1779357807569-18d3df9df645"),
     publishedAt: "2025-09-01",
     featured: true,
   },
@@ -87,7 +87,7 @@ export async function getBlogPosts(opts: GetBlogPostsOptions = {}): Promise<Blog
   if (sanityConfigured) {
     try {
       const rows = await sanityClient.fetch<BlogPost[]>(query);
-      if (rows?.length) items = rows.map((r) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : media.placeholder }));
+      if (rows?.length) items = rows.map((r, idx) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : (SAMPLE.find((b) => b.slug === r.slug)?.imageUrl ?? [U("1602306115889-fe8d26d2439a"), U("1607868894064-2b6e7ed1b324"), U("1779357807569-18d3df9df645")][idx % 3]) }));
     } catch {}
   }
 

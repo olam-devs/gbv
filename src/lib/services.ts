@@ -29,7 +29,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "gbv-case-management",
     summary:
       "Individualised case management for GBV survivors — needs assessment, safety planning, referral coordination, and ongoing follow-up until the survivor reaches safety and stability.",
-    imageUrl: U("1573497019940-1c28c88b4f3e"),
+    imageUrl: U("1607868894064-2b6e7ed1b324"),
     galleryUrls: [],
     sortOrder: 1,
     featured: true,
@@ -42,7 +42,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "psychosocial-support",
     summary:
       "Individual and group psychosocial support through women and girl-friendly spaces, helping survivors process trauma and rebuild their wellbeing in a safe, non-judgmental environment.",
-    imageUrl: U("1573497019940-1c28c88b4f3e"),
+    imageUrl: U("1612365245810-0d73ad771b2d"),
     galleryUrls: [],
     sortOrder: 2,
     featured: true,
@@ -55,7 +55,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "clinical-management-of-rape",
     summary:
       "Provision and strengthening of clinical management of rape services, including medical care, forensic documentation, and linkage to post-exposure prophylaxis and emergency contraception.",
-    imageUrl: U("1488521787991-ed7bbaae773c"),
+    imageUrl: U("1696483150935-2f719f1dfa6a"),
     galleryUrls: [],
     sortOrder: 3,
     featured: true,
@@ -68,7 +68,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "community-mobilisation",
     summary:
       "Building the capacity of community structures — community leaders, women's and men's groups — and GBV partner organisations to prevent and effectively respond to violence.",
-    imageUrl: U("1594608661623-aa0bd3a69d98"),
+    imageUrl: U("1779357807569-18d3df9df645"),
     galleryUrls: [],
     sortOrder: 4,
     featured: true,
@@ -81,7 +81,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "referral-pathways",
     summary:
       "Coordinating workshops and partnerships to map and strengthen referral pathways across the GBV sub-cluster, ensuring survivors reach the right services without falling through the gaps.",
-    imageUrl: U("1531206715517-5c0ba140b2b8"),
+    imageUrl: U("1509099863731-ef4bff19e808"),
     galleryUrls: [],
     sortOrder: 5,
     featured: true,
@@ -94,7 +94,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "womens-leadership",
     summary:
       "Training and mentorship programmes that equip women and girls with leadership skills, confidence, and the tools to advocate for their own rights and safety.",
-    imageUrl: U("1594608661623-aa0bd3a69d98"),
+    imageUrl: U("1544476613-98c049cad9d7"),
     galleryUrls: [],
     sortOrder: 6,
     featured: true,
@@ -107,7 +107,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "awareness-campaigns",
     summary:
       "Community awareness campaigns on GBV consequences, available services, and risks — including school-based education and community dialogues to shift harmful social norms.",
-    imageUrl: U("1503676260728-1c00da094a0b"),
+    imageUrl: U("1602306115889-fe8d26d2439a"),
     galleryUrls: [],
     sortOrder: 7,
     featured: false,
@@ -120,7 +120,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "prevention-dialogues",
     summary:
       "Facilitated community dialogues addressing the root causes and harmful social norms that drive gender-based violence and intimate partner violence.",
-    imageUrl: U("1531206715517-5c0ba140b2b8"),
+    imageUrl: U("1553775927-a071d5a6a39a"),
     galleryUrls: [],
     sortOrder: 8,
     featured: false,
@@ -133,7 +133,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "root-causes-gbv",
     summary:
       "Working to address all root causes that motivate gender-based violence (GBV) and intimate partner violence (IPV) — and providing sustained support to survivors on their journey to safety and healing.",
-    imageUrl: U("1488521787991-ed7bbaae773c"),
+    imageUrl: U("1774870292182-d59afbebf09e"),
     galleryUrls: [],
     sortOrder: 9,
     featured: false,
@@ -146,7 +146,7 @@ const SAMPLE: ServiceItem[] = [
     slug: "gender-equality",
     summary:
       "Ensuring gender equality for people of all genders through the elimination of GBV, and increasing the visibility, voice, and opportunities of women and girls in leadership and education.",
-    imageUrl: U("1594608661623-aa0bd3a69d98"),
+    imageUrl: U("1528654787581-6cad22f4da3c"),
     galleryUrls: [],
     sortOrder: 10,
     featured: false,
@@ -183,7 +183,7 @@ export async function getServices(opts: GetServicesOptions = {}): Promise<Servic
   if (sanityConfigured) {
     try {
       const rows = await sanityClient.fetch<ServiceItem[]>(query);
-      if (rows?.length) items = rows.map((r) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : media.placeholder }));
+      if (rows?.length) items = rows.map((r, idx) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : (SAMPLE.find((s) => s.slug === r.slug)?.imageUrl ?? media.serviceFallbacks[idx % media.serviceFallbacks.length]) }));
     } catch {}
   }
 

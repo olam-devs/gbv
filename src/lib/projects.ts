@@ -32,7 +32,7 @@ const SAMPLE: ProjectItem[] = [
     slug: "gbv-awareness-schools",
     summary:
       "In-school and out-of-school GBV awareness for adolescents in primary and secondary schools — shaping attitudes and behaviours so young people build healthier, more respectful relationships and contribute to a violence-free future.",
-    imageUrl: U("1503676260728-1c00da094a0b"),
+    imageUrl: U("1612365245810-0d73ad771b2d"),
     galleryUrls: [],
     status: "ongoing",
     tag: "Education",
@@ -46,7 +46,7 @@ const SAMPLE: ProjectItem[] = [
     slug: "social-media-campaigns",
     summary:
       "Planned digital campaigns using hashtags #StopGBV, #EndGBV, and #BreakTheSilence — sharing survivor stories, educational posts, live expert Q&As, and influencer collaborations to raise awareness across Tanzania. Campaigns include tie-ins with the 16 Days of Activism Against GBV (25 Nov – 10 Dec).",
-    imageUrl: U("1488521787991-ed7bbaae773c"),
+    imageUrl: U("1602306115889-fe8d26d2439a"),
     galleryUrls: [],
     status: "planned",
     tag: "Digital",
@@ -87,7 +87,7 @@ export async function getProjects(opts: GetProjectsOptions = {}): Promise<Projec
   if (sanityConfigured) {
     try {
       const rows = await sanityClient.fetch<ProjectItem[]>(query);
-      if (rows?.length) items = rows.map((r) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : media.placeholder }));
+      if (rows?.length) items = rows.map((r, idx) => ({ ...r, imageUrl: r.imageUrl ? urlFor(r.imageUrl).width(800).url() : (SAMPLE.find((p) => p.slug === r.slug)?.imageUrl ?? [U("1612365245810-0d73ad771b2d"), U("1602306115889-fe8d26d2439a")][idx % 2]) }));
     } catch {}
   }
 

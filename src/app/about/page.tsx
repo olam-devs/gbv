@@ -5,7 +5,7 @@ import { media } from "@/lib/media";
 import { Eye, Heart, Scale, Shield, Target, Users } from "lucide-react";
 
 const values = [
-  { icon: Scale, title: "Nonpartisan", desc: "We serve all survivors regardless of political, religious, or social affiliation." },
+  { icon: Scale, title: "Non-partisan", desc: "We serve all survivors regardless of political, religious, or social affiliation." },
   { icon: Shield, title: "Confidentiality", desc: "Every case and disclosure is handled with strict privacy and respect." },
   { icon: Users, title: "Community-centred", desc: "Walking alongside families and communities to shift harmful norms." },
   { icon: Target, title: "Sustainability", desc: "Long-term programmes built for lasting impact in Tanzanian communities." },
@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <PageShell
       eyebrow="About GI-Desk"
-      title="Nonpartisan, nonreligious — united against gender-based violence"
+      title="Non-partisan, non-religious — united against gender-based violence"
       heroImageSrc={media.hero.about}
     >
       <div className="space-y-8">
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
         <AnimatedSection delay={0.05}>
           <p className="text-sm leading-7 text-zinc-800">
-            Gender Based and Intimate (GI-Desk) is a nonpartisan, apolitical, nonreligious,
+            Gender Based and Intimate (GI-Desk) is a non-partisan, apolitical, non-religious,
             charitable non-profit organisation registered in August 2023 under the
             Non-Governmental Organisations Act No. 24 of 2002 (Reg. No. ooNGO/R/5824).
             We exist to support people experiencing gender-based and intimate partner violence
@@ -60,7 +60,7 @@ export default function AboutPage() {
             <div className="rounded-2xl border-2 border-[var(--primary)] bg-violet-50 p-6">
               <h2 className="text-base font-semibold text-zinc-950">Mission</h2>
               <p className="mt-2 text-sm leading-7 text-zinc-800">
-                A nonpartisan, apolitical, nonreligious, charitable non-profit to support
+                A non-partisan, apolitical, non-religious, charitable non-profit to support
                 people experiencing gender-based and intimate partner violence.
               </p>
             </div>
@@ -95,44 +95,45 @@ export default function AboutPage() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.13}>
-          <h2 className="text-lg font-semibold text-zinc-950">Our values</h2>
+        <div>
+          <AnimatedSection delay={0.13}>
+            <h2 className="text-lg font-semibold text-zinc-950">Our values</h2>
+          </AnimatedSection>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {values.map(({ icon: Icon, title, desc }, i) => (
-              <div
-                key={title}
-                className="flex gap-3 rounded-2xl border border-[var(--border)] bg-white p-4 shadow-sm"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-violet-50 text-[var(--primary)]">
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </span>
-                <div>
-                  <div className="text-sm font-semibold">{title}</div>
-                  <div className="text-xs leading-5 text-zinc-600">{desc}</div>
+              <AnimatedSection key={title} staggerIndex={i} delay={0.14}>
+                <div className="flex gap-3 rounded-2xl border border-[var(--border)] bg-white p-4 shadow-sm hover:border-[var(--primary)] hover:shadow-md transition-all duration-300">
+                  <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-violet-50 text-[var(--primary)]">
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <div className="text-sm font-semibold">{title}</div>
+                    <div className="text-xs leading-5 text-zinc-600">{desc}</div>
+                  </div>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection delay={0.15}>
-          <h2 className="text-lg font-semibold text-zinc-950">Our team</h2>
-          <p className="mt-1 text-sm text-zinc-600">
-            GI-Desk is led by a multidisciplinary team of health professionals, educators, and community experts.
-          </p>
+        <div>
+          <AnimatedSection delay={0.15}>
+            <h2 className="text-lg font-semibold text-zinc-950">Our team</h2>
+            <p className="mt-1 text-sm text-zinc-600">
+              GI-Desk is led by a multidisciplinary team of health professionals, educators, and community experts.
+            </p>
+          </AnimatedSection>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm"
-              >
-                <div className="text-sm font-semibold text-zinc-950">{member.name}</div>
-                <div className="mt-1 text-xs text-[var(--brand-blue)]">{member.role}</div>
-              </div>
+            {team.map((member, i) => (
+              <AnimatedSection key={member.name} staggerIndex={i} delay={0.16}>
+                <div className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm hover:border-[var(--primary)] hover:shadow-md transition-all duration-300">
+                  <div className="text-sm font-semibold text-zinc-950">{member.name}</div>
+                  <div className="mt-1 text-xs text-[var(--brand-blue)]">{member.role}</div>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
-        </AnimatedSection>
+        </div>
       </div>
     </PageShell>
   );

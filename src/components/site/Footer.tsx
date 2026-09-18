@@ -31,7 +31,7 @@ export function Footer() {
               </div>
             </div>
             <p className="max-w-sm text-sm text-violet-200">
-              A nonpartisan, apolitical, nonreligious charitable non-profit supporting survivors of gender-based and intimate partner violence in Tanzania.
+              A non-partisan, apolitical, non-religious charitable non-profit supporting survivors of gender-based and intimate partner violence in Tanzania.
             </p>
             <a
               href="https://www.facebook.com/profile.php?id=61555280275389"

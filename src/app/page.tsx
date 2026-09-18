@@ -48,7 +48,7 @@ export default async function Home() {
                   Standing with survivors of gender-based and intimate partner violence
                 </h1>
                 <p className="mt-4 max-w-xl text-pretty text-base leading-7 text-violet-100 sm:text-lg">
-                  GI-Desk is a nonpartisan, nonreligious charitable non-profit
+                  GI-Desk is a non-partisan, non-religious charitable non-profit
                   providing case management, psychosocial support, and community
                   education for GBV survivors across Tanzania.{" "}
                   <span className="font-semibold text-white">#StopGBVNow</span>
@@ -89,16 +89,18 @@ export default async function Home() {
                       title: "Empowerment",
                       desc: "Leadership, confidence and economic support for women.",
                     },
-                  ].map((c) => (
-                    <div key={c.title} className="rounded-xl p-3">
-                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-white ring-1 ring-white/20">
-                        {c.icon}
+                  ].map((c, i) => (
+                    <AnimatedSection key={c.title} staggerIndex={i} delay={0.3}>
+                      <div className="rounded-xl p-3">
+                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-white ring-1 ring-white/20">
+                          {c.icon}
+                        </div>
+                        <div className="mt-2 text-sm font-semibold text-white">{c.title}</div>
+                        <div className="mt-1 text-xs leading-5 text-violet-200">
+                          {c.desc}
+                        </div>
                       </div>
-                      <div className="mt-2 text-sm font-semibold text-white">{c.title}</div>
-                      <div className="mt-1 text-xs leading-5 text-violet-200">
-                        {c.desc}
-                      </div>
-                    </div>
+                    </AnimatedSection>
                   ))}
                 </div>
               </div>
@@ -109,7 +111,7 @@ export default async function Home() {
               <div className="pointer-events-none relative z-10 -mt-2 hidden rounded-2xl border-2 border-white/30 bg-white/90 p-4 text-sm shadow-lg sm:block sm:max-w-xs">
                 <div className="font-semibold text-zinc-950">Our mission</div>
                 <div className="mt-1 text-zinc-800">
-                  A nonpartisan, nonreligious non-profit supporting people experiencing
+                  A non-partisan, non-religious non-profit supporting people experiencing
                   gender-based and intimate partner violence in Tanzania.
                 </div>
               </div>
@@ -228,42 +230,44 @@ export default async function Home() {
 
       <section className="border-t border-white/15 bg-[var(--primary)]">
         <Container className="py-10">
-          <div className="relative overflow-hidden rounded-3xl border-2 border-white/25 bg-white/10 p-8 backdrop-blur sm:p-10">
-            <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
-                <h2 className="text-3xl font-semibold tracking-tight text-white">
-                  Help us end gender-based violence in Tanzania
-                </h2>
-                <p className="mt-3 max-w-xl text-sm leading-6 text-violet-100">
-                  Donors, partners and volunteers make every survivor&apos;s journey to safety possible.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                <ButtonLink
-                  href="/donate"
-                  size="lg"
-                  className="justify-center bg-white text-[var(--primary)] hover:bg-violet-50"
-                >
-                  Donate
-                </ButtonLink>
-                <ButtonLink
-                  href="/contact"
-                  variant="secondary"
-                  size="lg"
-                  className="justify-center bg-white/10 text-white ring-white/30 hover:bg-white/20"
-                >
-                  Talk to us <ArrowRight className="h-4 w-4" />
-                </ButtonLink>
+          <AnimatedSection direction="none">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-white/25 bg-white/10 p-8 backdrop-blur sm:p-10">
+              <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
+                <div>
+                  <h2 className="text-3xl font-semibold tracking-tight text-white">
+                    Help us end gender-based violence in Tanzania
+                  </h2>
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-violet-100">
+                    Donors, partners and volunteers make every survivor&apos;s journey to safety possible.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+                  <ButtonLink
+                    href="/donate"
+                    size="lg"
+                    className="justify-center bg-white text-[var(--primary)] hover:bg-violet-50"
+                  >
+                    Donate
+                  </ButtonLink>
+                  <ButtonLink
+                    href="/contact"
+                    variant="secondary"
+                    size="lg"
+                    className="justify-center bg-white/10 text-white ring-white/30 hover:bg-white/20"
+                  >
+                    Talk to us <ArrowRight className="h-4 w-4" />
+                  </ButtonLink>
+                </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </Container>
       </section>
 
       <section className="border-t border-[var(--border)] bg-white">
         <Container className="py-10">
           <div className="grid items-start gap-8 lg:grid-cols-5">
-            <div className="lg:col-span-2">
+            <AnimatedSection className="lg:col-span-2" direction="left">
               <div className="text-xs font-semibold tracking-wide text-[var(--primary)]">
                 Survivor voices
               </div>
@@ -273,7 +277,7 @@ export default async function Home() {
               <p className="mt-3 text-sm leading-7 text-zinc-700">
                 From survivors, community members, volunteers and partners.
               </p>
-            </div>
+            </AnimatedSection>
             <div className="min-w-0 lg:col-span-3">
               <TestimonialsCarousel
                 items={featuredTestimonials.map((t) => ({

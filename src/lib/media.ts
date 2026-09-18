@@ -25,13 +25,18 @@ export const media = {
     community: U("1779357807569-18d3df9df645"),
     care:      U("1611432580340-af48bd7549ed"),
   },
-  // Fallback images for service/project cards (used when Sanity has no image)
+  // Fallback images for service cards (used when Sanity has no image — cycles by index)
   serviceFallbacks: [
-    U("1607868894064-2b6e7ed1b324"),
-    U("1602306115889-fe8d26d2439a"),
-    U("1744973149087-179e3ed54eae"),
-    U("1544476613-98c049cad9d7"),
-    U("1528654787581-6cad22f4da3c"),
+    U("1607868894064-2b6e7ed1b324"), // Two African women — support session
+    U("1602306115889-fe8d26d2439a"), // Woman speaking — advocacy
+    U("1779357807569-18d3df9df645"), // Women in kitenge — community
+    U("1544476613-98c049cad9d7"),    // Women raising hands — empowerment
+    U("1612365245810-0d73ad771b2d"), // African women dialogue — prevention
+    U("1553775927-a071d5a6a39a"),    // Three women on road — outreach
+    U("1509099863731-ef4bff19e808"), // Community celebration — unity
+    U("1696483150935-2f719f1dfa6a"), // Muslim women — coastal Tanzania
+    U("1528654787581-6cad22f4da3c"), // Women community — care
+    U("1774870292182-d59afbebf09e"), // School girls — education
   ],
   testimonialCategories: {
     survivors:  U("1607868894064-2b6e7ed1b324"),

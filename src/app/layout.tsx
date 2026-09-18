@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | GI-Desk",
   },
   description:
-    "GI-Desk (Gender Based and Intimate) is a nonpartisan, nonreligious non-profit supporting survivors of gender-based and intimate partner violence in Tanzania.",
+    "GI-Desk (Gender Based and Intimate) is a non-partisan, non-religious non-profit supporting survivors of gender-based and intimate partner violence in Tanzania.",
   metadataBase: new URL("https://gbvdesk.org"),
   openGraph: {
     title: "GI-Desk — Stop Violence",
