@@ -19,11 +19,11 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
-  if (!post) return { title: "Post not found" };
+  if (!post) return { title: "Resource not found" };
   return { title: post.title, description: post.excerpt };
 }
 
-export default async function BlogPostPage({
+export default async function ResourcePostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -34,7 +34,7 @@ export default async function BlogPostPage({
 
   return (
     <PageShell
-      eyebrow={post.category ?? "Blog"}
+      eyebrow={post.category ?? "Resources"}
       title={post.title}
       heroImageSrc={post.imageUrl}
     >
@@ -45,8 +45,8 @@ export default async function BlogPostPage({
         </div>
 
         <DetailLayout
-          backHref="/blog"
-          backLabel="All stories"
+          backHref="/resources"
+          backLabel="All resources"
           title={post.title}
           summary={post.excerpt}
           badge={post.category}

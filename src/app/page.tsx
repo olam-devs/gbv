@@ -199,14 +199,14 @@ export default async function Home() {
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
                   <div className="text-xs font-semibold tracking-wide text-violet-300">
-                    Latest stories
+                    Knowledge &amp; updates
                   </div>
                   <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">
-                    News &amp; updates
+                    Resources
                   </h2>
                 </div>
-                <ButtonLink href="/blog" variant="secondary">
-                  All stories <ArrowRight className="h-4 w-4" />
+                <ButtonLink href="/resources" variant="secondary">
+                  All resources <ArrowRight className="h-4 w-4" />
                 </ButtonLink>
               </div>
             </AnimatedSection>
@@ -214,7 +214,7 @@ export default async function Home() {
               {featuredPosts.map((post, i) => (
                 <ContentCard
                   key={post._id}
-                  href={`/blog/${post.slug}`}
+                  href={`/resources/${post.slug}`}
                   title={post.title}
                   excerpt={post.excerpt}
                   imageUrl={post.imageUrl}

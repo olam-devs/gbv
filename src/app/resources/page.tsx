@@ -4,7 +4,7 @@ import { BlogCategoryFilter } from "@/components/blog/BlogCategoryFilter";
 import { getBlogCategories, getBlogPosts } from "@/lib/blog";
 import { media } from "@/lib/media";
 
-export default async function BlogPage() {
+export default async function ResourcesPage() {
   const [posts, categories] = await Promise.all([
     getBlogPosts(),
     getBlogCategories(),
@@ -12,14 +12,14 @@ export default async function BlogPage() {
 
   return (
     <PageShell
-      eyebrow="Stories & updates"
-      title="Latest from GI-Desk"
+      eyebrow="Knowledge & updates"
+      title="Resources from GI-Desk"
       heroImageSrc={media.hero.blog}
     >
       <AnimatedSection>
         <p className="text-sm leading-7 text-zinc-800">
-          News, events, and community stories from GI-Desk. Browse by category and read
-          articles on GBV awareness, survivor support, and community action.
+          Articles, news, and community stories from GI-Desk. Browse by category
+          to find information on GBV awareness, survivor support, and community action.
         </p>
       </AnimatedSection>
 

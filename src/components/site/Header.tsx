@@ -14,13 +14,13 @@ const nav = [
   { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
   { href: "/services", label: "Services", match: (p: string) => p.startsWith("/services") },
   { href: "/projects", label: "Projects", match: (p: string) => p.startsWith("/projects") },
-  { href: "/blog", label: "Blog", match: (p: string) => p.startsWith("/blog") },
+  { href: "/resources", label: "Resources", match: (p: string) => p.startsWith("/resources") },
   {
     href: "/testimonials",
     label: "Testimonials",
     match: (p: string) => p.startsWith("/testimonials"),
   },
-  { href: "/jobs", label: "Careers", match: (p: string) => p.startsWith("/jobs") },
+  { href: "/careers", label: "Careers", match: (p: string) => p.startsWith("/careers") },
   {
     href: "/get-involved",
     label: "Get involved",
@@ -31,10 +31,10 @@ const nav = [
 
 function navLinkClass(active: boolean) {
   return cn(
-    "rounded-full px-2 py-2 text-[13px] font-medium transition-colors whitespace-nowrap",
+    "rounded-full px-3 py-1.5 text-[13px] font-medium transition-all duration-200 whitespace-nowrap",
     active
-      ? "bg-white/25 text-white shadow-sm"
-      : "text-white/80 hover:bg-white/15 hover:text-white",
+      ? "bg-white text-[var(--primary)] font-semibold shadow-sm"
+      : "text-white/85 hover:bg-white/15 hover:text-white",
   );
 }
 

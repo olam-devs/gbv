@@ -15,7 +15,7 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       transition={{ duration: 0.4, delay: index * 0.06 }}
     >
       <Link
-        href={`/blog/${post.slug}`}
+        href={`/resources/${post.slug}`}
         className="group flex h-full flex-col overflow-hidden rounded-2xl border-2 border-[var(--primary)] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
       >
         <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">

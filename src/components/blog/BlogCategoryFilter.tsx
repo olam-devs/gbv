@@ -27,10 +27,10 @@ export function BlogCategoryFilter({
           className={`rounded-full border-2 px-4 py-1.5 text-sm font-semibold transition ${
             active === "all"
               ? "border-black bg-black text-white"
-              : "border-[var(--primary)] bg-white text-black hover:bg-red-50"
+              : "border-[var(--primary)] bg-white text-black hover:bg-violet-50"
           }`}
         >
-          All stories
+          All resources
         </button>
         {categories.map((c) => (
           <button
@@ -40,7 +40,7 @@ export function BlogCategoryFilter({
             className={`rounded-full border-2 px-4 py-1.5 text-sm font-semibold transition ${
               active === c.slug
                 ? "border-black bg-black text-white"
-                : "border-[var(--primary)] bg-white text-black hover:bg-red-50"
+                : "border-[var(--primary)] bg-white text-black hover:bg-violet-50"
             }`}
           >
             {c.title}
@@ -56,7 +56,11 @@ export function BlogCategoryFilter({
 
       {filtered.length === 0 ? (
         <p className="mt-8 text-sm text-zinc-700">
-          No posts in this category yet.
+          No resources in this category yet. Check back soon or{" "}
+          <a href="/contact" className="font-semibold text-[var(--primary)] underline">
+            contact us
+          </a>{" "}
+          for the latest news.
         </p>
       ) : null}
     </>

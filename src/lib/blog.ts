@@ -18,47 +18,9 @@ export type BlogPost = {
   content?: PortableTextBlock[];
 };
 
-const U = (id: string) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
-
-const SAMPLE: BlogPost[] = [
-  {
-    _id: "b1",
-    title: "Understanding the 16 Days of Activism Against GBV",
-    slug: "understanding-16-days-of-activism",
-    excerpt:
-      "Every year from 25 November to 10 December the world unites against gender-based violence. Here is how GI-Desk marks the campaign and what communities can do to get involved.",
-    category: "Awareness",
-    categorySlug: "awareness",
-    imageUrl: U("1602306115889-fe8d26d2439a"),
-    publishedAt: "2025-11-25",
-    featured: true,
-  },
-  {
-    _id: "b2",
-    title: "5 Warning Signs of Intimate Partner Violence",
-    slug: "5-warning-signs-ipv",
-    excerpt:
-      "Intimate partner violence often begins subtly. Recognising the early warning signs can help survivors and their support networks act before the situation escalates.",
-    category: "Education",
-    categorySlug: "education",
-    imageUrl: U("1607868894064-2b6e7ed1b324"),
-    publishedAt: "2025-10-10",
-    featured: true,
-  },
-  {
-    _id: "b3",
-    title: "GBV Awareness in Schools: Why It Starts Early",
-    slug: "gbv-awareness-schools",
-    excerpt:
-      "GI-Desk runs GBV awareness sessions for in-school and out-of-school adolescents in primary and secondary schools — helping young people recognise, prevent, and respond to gender-based violence.",
-    category: "Education",
-    categorySlug: "education",
-    imageUrl: U("1779357807569-18d3df9df645"),
-    publishedAt: "2025-09-01",
-    featured: true,
-  },
-];
+// Resources are managed entirely in Sanity Studio → Resources (post type).
+// No sample posts — admin adds real content via Studio.
+const SAMPLE: BlogPost[] = [];
 
 type GetBlogPostsOptions = {
   featuredOnly?: boolean;
