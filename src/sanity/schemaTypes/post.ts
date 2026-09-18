@@ -57,7 +57,7 @@ export const post = defineType({
           { title: "Policy & Research", value: "policy" },
         ],
       },
-      hidden: ({ document }) => document?.category?._ref !== "cat-blog-articles",
+      hidden: ({ document }) => (document as any)?.category?._ref !== "cat-blog-articles",
     }),
     ...sortableFeaturedFields.map((f) => defineField(f)),
     defineField({
