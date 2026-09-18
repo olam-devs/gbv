@@ -1,38 +1,47 @@
+import { groq } from "next-sanity";
+import { sanityClient } from "@/sanity/client";
+import { sanityConfigured } from "@/sanity/env";
 import { PageShell } from "@/components/site/PageShell";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ButtonLink } from "@/components/ui/Button";
 import { media } from "@/lib/media";
 import { MapPin, Clock, Calendar } from "lucide-react";
 
-// Careers are managed in Sanity Studio → Careers.
-// Sample openings shown until real postings are added.
-const SAMPLE_CAREERS = [
-  {
-    _id: "c1",
-    title: "GBV Case Manager",
-    type: "Full-time",
-    department: "Programme",
-    location: "Bagamoyo, Pwani",
-    deadline: "2026-10-31",
-    summary:
-      "Provide individualised case management to GBV survivors — needs assessment, safety planning, referral coordination, and follow-up to support survivors on their journey to safety.",
-    slug: "gbv-case-manager",
-  },
-  {
-    _id: "c2",
-    title: "Community Outreach Volunteer",
-    type: "Volunteer",
-    department: "Programme",
-    location: "Dar es Salaam / Bagamoyo",
-    deadline: "",
-    summary:
-      "Support GI-Desk's awareness campaigns, community dialogues, and school outreach activities as a volunteer advocate against gender-based violence.",
-    slug: "community-outreach-volunteer",
-  },
-];
+type CareerItem = {
+  _id: string;
+  title: string;
+  slug: string;
+  department?: string;
+  location?: string;
+  type: string;
+  deadline?: string;
+  summary: string;
+};
 
-export default function CareersPage() {
-  const careers = SAMPLE_CAREERS;
+const query = groq`
+  *[_type == "career"] | order(deadline asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    department,
+    location,
+    type,
+    deadline,
+    summary
+  }
+`;
+
+async function getCareers(): Promise<CareerItem[]> {
+  if (!sanityConfigured) return [];
+  try {
+    return await sanityClient.fetch<CareerItem[]>(query);
+  } catch {
+    return [];
+  }
+}
+
+export default async function CareersPage() {
+  const careers = await getCareers();
 
   return (
     <PageShell
@@ -50,13 +59,10 @@ export default function CareersPage() {
         </AnimatedSection>
 
         {careers.length > 0 ? (
-          <AnimatedSection delay={0.06}>
-            <div className="space-y-4">
-              {careers.map((c) => (
-                <div
-                  key={c._id}
-                  className="rounded-2xl border-2 border-[var(--primary)] bg-white p-6 shadow-sm"
-                >
+          <div className="space-y-4">
+            {careers.map((c, i) => (
+              <AnimatedSection key={c._id} staggerIndex={i} delay={0.06}>
+                <div className="rounded-2xl border-2 border-[var(--primary)] bg-white p-6 shadow-sm">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <h2 className="text-base font-semibold text-zinc-950">{c.title}</h2>
@@ -65,10 +71,12 @@ export default function CareersPage() {
                           <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                           {c.type}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-                          {c.location}
-                        </span>
+                        {c.location ? (
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                            {c.location}
+                          </span>
+                        ) : null}
                         {c.deadline ? (
                           <span className="flex items-center gap-1">
                             <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
@@ -77,9 +85,11 @@ export default function CareersPage() {
                         ) : null}
                       </div>
                     </div>
-                    <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-[var(--primary)] ring-1 ring-[var(--primary)]/30">
-                      {c.department}
-                    </span>
+                    {c.department ? (
+                      <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-[var(--primary)] ring-1 ring-[var(--primary)]/30">
+                        {c.department}
+                      </span>
+                    ) : null}
                   </div>
                   <p className="mt-3 text-sm leading-6 text-zinc-700">{c.summary}</p>
                   <div className="mt-4">
@@ -88,10 +98,19 @@ export default function CareersPage() {
                     </ButtonLink>
                   </div>
                 </div>
-              ))}
+              </AnimatedSection>
+            ))}
+          </div>
+        ) : (
+          <AnimatedSection delay={0.06}>
+            <div className="rounded-2xl border border-dashed border-[var(--primary)]/40 bg-violet-50/50 p-8 text-center">
+              <p className="text-sm font-medium text-zinc-700">No open positions at the moment.</p>
+              <p className="mt-1 text-sm text-zinc-500">
+                Check back soon — or send a speculative application below.
+              </p>
             </div>
           </AnimatedSection>
-        ) : null}
+        )}
 
         <AnimatedSection delay={0.1}>
           <div className="rounded-2xl bg-violet-50 p-6 ring-1 ring-violet-200">

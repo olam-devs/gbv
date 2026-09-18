@@ -22,7 +22,7 @@ export const media = {
     testimonials:U("1509099863731-ef4bff19e808"),// African women in community celebration
   },
   about: {
-    community: U("1779357807569-18d3df9df645"),
+    community: U("1528654787581-6cad22f4da3c"), // Women community care — about section banner
     care:      U("1611432580340-af48bd7549ed"),
   },
   // Fallback images for service cards (used when Sanity has no image — cycles by index)
