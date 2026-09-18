@@ -3,7 +3,7 @@ import { richTextBlock, sortableFeaturedFields } from "@/sanity/schemaTypes/rich
 
 export const post = defineType({
   name: "post",
-  title: "Blog posts",
+  title: "Resources",
   type: "document",
   orderings: [
     {
@@ -36,9 +36,28 @@ export const post = defineType({
     }),
     defineField({
       name: "category",
-      title: "Category",
+      title: "Type",
+      description: "Choose Articles or News.",
       type: "reference",
       to: [{ type: "category" }],
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "topic",
+      title: "Topic",
+      description: "Articles only — the subject area this article covers.",
+      type: "string",
+      options: {
+        list: [
+          { title: "GBV Awareness", value: "awareness" },
+          { title: "Legal Aid", value: "legal" },
+          { title: "Health & Wellbeing", value: "health" },
+          { title: "Education", value: "education" },
+          { title: "Community Stories", value: "community" },
+          { title: "Policy & Research", value: "policy" },
+        ],
+      },
+      hidden: ({ document }) => document?.category?._ref !== "cat-blog-articles",
     }),
     ...sortableFeaturedFields.map((f) => defineField(f)),
     defineField({
@@ -85,12 +104,14 @@ export const post = defineType({
       title: "title",
       media: "mainImage",
       category: "category.title",
+      topic: "topic",
       featured: "featured",
     },
-    prepare({ title, media, category, featured }) {
+    prepare({ title, media, category, topic, featured }) {
+      const label = [category, topic].filter(Boolean).join(" · ");
       return {
         title: featured ? `★ ${title}` : title,
-        subtitle: category ? `Category: ${category}` : undefined,
+        subtitle: label || undefined,
         media,
       };
     },

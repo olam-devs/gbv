@@ -12,6 +12,7 @@ export type BlogPost = {
   excerpt: string;
   category: string;
   categorySlug: string;
+  topic?: string;
   imageUrl: string;
   publishedAt?: string;
   featured?: boolean;
@@ -36,6 +37,7 @@ const query = groq`
     excerpt,
     "category": category->title,
     "categorySlug": category->slug.current,
+    topic,
     "imageUrl": mainImage.asset->url,
     publishedAt,
     featured,
